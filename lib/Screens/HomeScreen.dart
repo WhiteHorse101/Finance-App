@@ -8,6 +8,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final String drawer = 'assets/svg/drawer.svg';
+  final String profile = 'images/profile.png';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,9 +24,15 @@ class _HomeScreenState extends State<HomeScreen> {
                   SvgPicture.asset(
                     drawer,
                     color: Colors.black,
-                    width: 100,
-                    height: 100,
                   ),
+                  Container(
+                    height: 59,
+                    width: 59,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      image: DecorationImage(image: AssetImage(profile)),
+                    ),
+                  )
                 ],
               ),
             )
