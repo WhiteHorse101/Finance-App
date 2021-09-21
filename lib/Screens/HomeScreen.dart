@@ -8,7 +8,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final String drawer = 'assets/svg/drawer.svg';
-  final String profile = 'images/profile.png';
+  final String profile = '/images/profile.png';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
