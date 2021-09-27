@@ -10,6 +10,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   final String drawer = 'assets/svg/drawer.svg';
   final String profile = 'assets/images/profile.png';
+  final String smallellipse = "assets/images/ellipsesmall.png";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,7 +63,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       fontSize: 30,
                       fontWeight: FontWeight.w800,
                     ),
-
                   ),
                 ],
               ),
@@ -70,16 +70,26 @@ class _HomeScreenState extends State<HomeScreen> {
             Container(
               height: 199,
               child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                padding: EdgeInsets.only(left: 16, right: 6),
-                itemCount: cards.length,
-                itemBuilder: (context, index){
-                return Container(
-                  height: 199,
-                  width: 344,
-                  decoration: BoxDecoration(),
-                );
-              }),
+                  scrollDirection: Axis.horizontal,
+                  padding: EdgeInsets.only(left: 16, right: 6),
+                  //  itemCount: cards.length,
+                  itemBuilder: (context, index) {
+                    return Container(
+                      margin: EdgeInsets.only(right: 10),
+                      height: 199,
+                      width: 344,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(28),
+                          color: Color(0xff1E1E99)),
+                      child: Stack(
+                        children: <Widget>[
+                          Positioned(
+                            child: SvgPicture.asset(smallellipse),
+                          )
+                        ],
+                      ),
+                    );
+                  }),
             ),
           ],
         ),
